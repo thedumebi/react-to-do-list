@@ -14,6 +14,10 @@ function App() {
     setInputText("");
   }
 
+  function List(props) {
+    return <li>{props.item}</li>;
+  }
+
   return (
     <div className="container">
       <div className="heading">
@@ -28,7 +32,9 @@ function App() {
       <div>
         <ul>
           <li>A Item </li>
-          {items.map((todoItem) => <li>{todoItem}</li>)}
+          {items.map((todoItem) => (
+            <List key={todoItem} item={todoItem} />
+          ))}
         </ul>
       </div>
     </div>
